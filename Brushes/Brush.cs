@@ -11,9 +11,9 @@ namespace GraphicsEditor
     {
         public Color BrushColor { get; set; }
         public int Size { get; set; }
-        public Brush(Color BrushColor, int size)
+        public Brush(Color brushColor, int size)
         {
-            BrushColor = BrushColor;
+            BrushColor = brushColor;
             Size = size;
         }  
         public abstract void Draw(Bitmap image, int x, int y);

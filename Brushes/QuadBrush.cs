@@ -15,9 +15,9 @@ namespace GraphicsEditor.Brushes
         }
         public override void Draw(Bitmap image, int x, int y)
         {
-            for (int y0 = y-Size;y0<y+Size;++y0)
+            for (int y0 = y-Size; y0<y+Size; ++y0)
             {
-                for(int x0 = x-Size;x0<x+Size;++x0) 
+                for(int x0 = x-Size; x0<x+Size; ++x0) 
                 { 
                     image.SetPixel(x0, y0, BrushColor);
                 }
