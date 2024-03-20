@@ -21,16 +21,20 @@ namespace GraphicsEditor.Brushes
 
                 image.SetPixel(x + (int)x1, (int)y0 + (int)y, BrushColor);
                 image.SetPixel(x - (int)x1, (int)y0 + (int)y, BrushColor);
-                if (y0 == -Size || y0 == Size)//проверяем если y0 находится сверху или снизу
-                {
-                    for (double x0 = -x1; x0 <= x1; ++x0)
-                    {
-                        image.SetPixel(x + (int)x0, (int)y0 + (int)y, BrushColor);
-                    }
                 
+            }
+            for (double x0 = -Size; x0 <= Size; ++x0)
+            {
+                double y1 = Math.Sqrt(Size * Size - Math.Pow(x0, 2));
+     
+                if (x >= 0 && x < image.Width && y >= 0 && y < image.Height)
+                {
+                    image.SetPixel((int)x0 + x, y + (int)y1, BrushColor);
+                    image.SetPixel((int)x0 + x, y - (int)y1, BrushColor);
                 }
             }
-           
+            
         }
+        
     }
 }

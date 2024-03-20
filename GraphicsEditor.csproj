@@ -48,7 +48,10 @@
   <ItemGroup>
     <Compile Include="Brushes\Brush.cs" />
     <Compile Include="Brushes\CircleBrush.cs" />
+    <Compile Include="Brushes\EraserBrush.cs" />
     <Compile Include="Brushes\QuadBrush.cs" />
+    <Compile Include="Brushes\SnowBrush.cs" />
+    <Compile Include="Brushes\StarBrush.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +77,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SimplePaint.resx">
       <DependentUpon>SimplePaint.cs</DependentUpon>
@@ -90,6 +94,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\квадрат.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\снежинка.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
