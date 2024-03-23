@@ -115,7 +115,13 @@ namespace GraphicsEditor
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateBlank(pictureBox1.Width, pictureBox1.Height);
+            SizeOfForm form = new SizeOfForm();
+            form.ShowDialog();
+            if (form.Canceled == false)
+            {
+                CreateBlank(form.W, form.H);
+            }
+
         }
 
         private void btnSnowBrush_Click(object sender, EventArgs e)
@@ -218,6 +224,11 @@ namespace GraphicsEditor
         private void button18_Click(object sender, EventArgs e)
         {
             _selectedBrush = new EraserBrush(SelectedColor, SelectedSize);
+        }
+
+        private void Star2_Click(object sender, EventArgs e)
+        {
+            _selectedBrush = new Star2(SelectedColor, SelectedSize);
         }
     }
 }
