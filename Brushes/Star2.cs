@@ -13,26 +13,31 @@ namespace GraphicsEditor.Brushes
             : base(brushColor, size)
         {
         }
-        public override void Draw(Bitmap image, int x, int y)
+        public override void Draw(Bitmap image, int x0, int y0)
         {
-            Graphics g = Graphics.FromImage(image);
             double fi = 0;
-            float LastX, LastY;
-            for (fi = 0; fi <= 2 *Math.PI; fi += 0.05)
-            {
-                
+            //int lastY = (Size * 1) + y0;
+           // int lastX = (Size * 0) + x0;
+
+
+            int lastY =  y0;
+            int lastX = Size + x0;
+            //? чему равны эти координаты до начала рассчетов
+            for (fi = 0; fi < 2 *Math.PI; fi += 0.015)
+            {                
                 double R = Size +  Size * Math.Sin(5 * fi) / 2.0;
-                //double R = Size * Math.Sin(2 * fi / 3);
-                //double R = Size + Size * fi / 3;
-                double y1 = R * Math.Sin(fi);
-                double x1 = R * Math.Cos(fi);
-                image.SetPixel(x + (int)x1, y + (int)y1, BrushColor);
-                LastX = x + (float)x1;
-                LastY = y + (float)y1;
-                g.DrawLine(new Pen(BrushColor), x + (int)x1, y + (int)y1, LastX, LastY);
+                int y = (int)( R * Math.Sin(fi)) + y0;
+                int x = (int) (R * Math.Cos(fi)) + x0;
+               // image.SetPixel(x, y, BrushColor);
+                LineDrawer.DrawLine(image, BrushColor, lastX, lastY, x, y);
+                lastX = x;
+                lastY = y;
             }
 
-            g.Dispose();
+            int y2 = y0;
+            int x2 = Size + x0;
+            LineDrawer.DrawLine(image, BrushColor, lastX, lastY, x2, y2);
+
         }
     }
 }

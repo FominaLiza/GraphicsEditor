@@ -230,5 +230,17 @@ namespace GraphicsEditor
         {
             _selectedBrush = new Star2(SelectedColor, SelectedSize);
         }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            LineDrawer.DrawLine((Bitmap)pictureBox1.Image, Color.Red, 200, 100, 400, 200);
+            pictureBox1.Refresh();
+            LineDrawer.DrawLine((Bitmap)pictureBox1.Image, Color.Red, 400, 200, 200, 300);
+            pictureBox1.Refresh();
+            LineDrawer.DrawLine((Bitmap)pictureBox1.Image, Color.Red, 200, 300, 100, 200);
+            pictureBox1.Refresh();
+            LineDrawer.DrawLine((Bitmap)pictureBox1.Image, Color.Red, 100, 200, 200, 100);
+            pictureBox1.Refresh();
+        }
     }
 }

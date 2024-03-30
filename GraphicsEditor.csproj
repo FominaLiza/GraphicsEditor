@@ -53,6 +53,7 @@
     <Compile Include="Brushes\SnowBrush.cs" />
     <Compile Include="Brushes\Star2.cs" />
     <Compile Include="Brushes\StarBrush.cs" />
+    <Compile Include="LineDrawer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimplePaint.cs">
