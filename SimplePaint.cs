@@ -70,7 +70,7 @@ namespace GraphicsEditor
 
         private void button1_Click(object sender, EventArgs e)
         {
-        _selectedBrush = new QuadBrush(SelectedColor, SelectedSize);
+            _selectedBrush = new QuadBrush(SelectedColor, SelectedSize);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
