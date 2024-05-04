@@ -17,11 +17,13 @@ namespace GraphicsEditor
         {
             InitializeComponent();
             CreateBlank(pictureBox1.Width, pictureBox1.Height);
+            _selectedBrush = new QuadBrush(Color.Black, SelectedSize);
         }
         int _x;//текущая х координата мыши
         int _y;//текушщая у координата мыши
         bool _mouseClicked;//мышь зажата, состояние актуально для рисования
         private Color _selectedColor;
+        
         Color SelectedColor
         {
             get
@@ -136,7 +138,7 @@ namespace GraphicsEditor
 
         private void btnStarBrush_Click(object sender, EventArgs e)
         {
-            _selectedBrush = new StarBrush(SelectedColor, SelectedSize);
+            _selectedBrush = new StarBrush(_selectedColor, SelectedSize);
         }
 
         private void button3_Click(object sender, EventArgs e)

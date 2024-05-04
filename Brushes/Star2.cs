@@ -15,6 +15,8 @@ namespace GraphicsEditor.Brushes
         }
         public override void Draw(Bitmap image, int x0, int y0)
         {
+            try
+            {
             double fi = 0;
             //int lastY = (Size * 1) + y0;
            // int lastX = (Size * 0) + x0;
@@ -38,6 +40,11 @@ namespace GraphicsEditor.Brushes
             int x2 = Size + x0;
             LineDrawer.DrawLine(image, BrushColor, lastX, lastY, x2, y2);
 
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return;
+            }
         }
     }
 }

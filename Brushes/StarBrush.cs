@@ -16,6 +16,8 @@ namespace GraphicsEditor.Brushes
         }
         public override void Draw(Bitmap image, int x, int y)
         {
+            try
+            {
             using (Graphics gr = Graphics.FromImage(image))
             {
 
@@ -34,7 +36,7 @@ namespace GraphicsEditor.Brushes
                       PointF[] pts = StarPoints(vertexCount, new Rectangle((int)cx - (int)rx, (int)cy - (int)ry, (int)rx * 2, (int)ry * 2));
 
                       // Рисуем звезду
-                      gr.DrawPolygon(pen, pts);
+                      gr.DrawPolygon(pen, pts);                        
                     
                 }
 
@@ -61,7 +63,11 @@ namespace GraphicsEditor.Brushes
                     return pts;
                 }
             
-           
+            }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return;
             }
         }
     }

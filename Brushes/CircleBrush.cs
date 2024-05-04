@@ -15,19 +15,25 @@ namespace GraphicsEditor.Brushes
         }
         public override void Draw(Bitmap image, int x, int y)
         {
-            // Перебираем все пиксели внутри радиуса
-            for (int i = -Size/2; i <= Size/2; i++)// Size/2 - радиус
+            try
             {
-                for (int j = -Size / 2; j <= Size / 2; j++)
+                // Перебираем все пиксели внутри радиуса
+                for (int i = -Size/2; i <= Size/2; i++)// Size/2 - радиус
                 {
-                    // Проверяем, находится ли текущий пиксель внутри круга
-                    if (i * i + j * j <= (Size / 2) * (Size / 2))
+                    for (int j = -Size / 2; j <= Size / 2; j++)
                     {
-                        image.SetPixel(x + i, y + j, BrushColor);
+                        // Проверяем, находится ли текущий пиксель внутри круга
+                        if (i * i + j * j <= (Size / 2) * (Size / 2))
+                        {
+                            image.SetPixel(x + i, y + j, BrushColor);
+                        }
                     }
                 }
             }
-
+            catch(ArgumentOutOfRangeException)
+            {
+                return;       
+            }
 
             //for (double y0 = -Size; y0 <= Size; ++y0)
             //{

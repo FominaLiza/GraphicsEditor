@@ -15,7 +15,9 @@ namespace GraphicsEditor.Brushes
         }
         public override void Draw(Bitmap image, int x, int y)
         {
-            for (double y0 = -Size; y0 <= Size; ++y0)// две галочки, сверху и снизу от оси X
+            
+            double a = Math.Sqrt((Size * Size) / 2);
+            for (double y0 = -a; y0 <= a; ++y0)// две галочки, сверху и снизу от оси X
             {
                 double x1 = Math.Abs(y0);
 
@@ -41,6 +43,9 @@ namespace GraphicsEditor.Brushes
                     image.SetPixel(x, y + y0, BrushColor);
                 }
             }
+            
+           
+
         }
     }
 }
