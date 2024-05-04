@@ -21,12 +21,17 @@ namespace GraphicsEditor
         int _x;//текущая х координата мыши
         int _y;//текушщая у координата мыши
         bool _mouseClicked;//мышь зажата, состояние актуально для рисования
-
+        private Color _selectedColor;
         Color SelectedColor
         {
             get
             {
-                return colorDialog1.Color;
+                return _selectedColor;
+            }
+            set
+            {
+                _selectedColor = value;
+                _selectedBrush.BrushColor = value;
             }
         }
         int SelectedSize
@@ -126,7 +131,7 @@ namespace GraphicsEditor
 
         private void btnSnowBrush_Click(object sender, EventArgs e)
         {
-            _selectedBrush = new SnowBrush(SelectedColor, SelectedSize);
+            _selectedBrush = new SnowBrush(_selectedColor, SelectedSize);
         }
 
         private void btnStarBrush_Click(object sender, EventArgs e)
@@ -144,72 +149,72 @@ namespace GraphicsEditor
 
         private void button4_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            _selectedBrush.BrushColor = ((Button)sender).BackColor;
+            SelectedColor = ((Button)sender).BackColor;
         }
 
         private void trackBrush_ValueChanged(object sender, EventArgs e)
